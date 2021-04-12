@@ -35,12 +35,37 @@
 // let resultat = additioner(0, 5);
 // console.log(resultat);
 
-// document.write("Test ajout");
-function send() {
-  console.log(document.getElementById('paragraphe'));
-  console.log(document.getElementById('paragraphe').innerHTML);
-  console.log(document.getElementsByTagName('p'));
-  document.getElementById('paragraphe').innerHTML = 'nouvelle chiane';
-  document.getElementById('paragraphe').style.textDecoration = "overline";
-  document.getElementsByTagName('p').item(1).className = "classeTest";
+// // document.write("Test ajout");
+// function send() {
+//   console.log(document.getElementById('paragraphe'));
+//   console.log(document.getElementById('paragraphe').innerHTML);
+//   console.log(document.getElementsByTagName('p'));
+//   document.getElementById('paragraphe').innerHTML = 'nouvelle chiane';
+//   document.getElementById('paragraphe').style.textDecoration = "overline";
+//   document.getElementsByTagName('p').item(1).className = "classeTest";
+// }
+
+
+class Info {
+  constructor(param1, paramX) {
+    this.info1 = param1;
+    this.info2 = paramX;
+  }
+}
+
+let informationA = new Info('Test1', 'Test2');
+let informationB = new Info('Testblalala', 'fdsfsfd');
+console.log(informationA.info1);
+
+let tableau = [informationA];
+tableau.push(informationB);
+console.log(tableau.length);
+// tableau.pop();
+console.log(tableau[1]);
+let informationC = new Info('INFO C 1', 'INFO C 2');
+tableau.splice(1, 1, informationC);
+console.log(tableau[1]);
+
+for (i in tableau) {
+  console.log(tableau[i].info2);
 }
