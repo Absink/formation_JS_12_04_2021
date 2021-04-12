@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>CRM</title>
+    <link rel="icon" type="image/png" href="../img/icon.png" />
+  </head>
+
+  <body>
+    <h1 align="center">MyCRM</h1>
+    <h2>Ajouter un client:</h2>
+
+    <form name="form_client" method="post">
+      <div>
+        <label for="name">Nom</label>
+        <input type="text" id="name" name="name">
+      </div>
+
+      <div>
+        <label for="firstname">Prenom</label>
+        <input type="text" id="firstname" name="firstname">
+      </div>
+
+      <div>
+        <label for="password">Mot de passe</label>
+        <input type="password" id="password" name="password">
+      </div>
+
+      <div>
+        <label for="civility">Civilité</label>
+        <select id="civility" name="civility">
+          <option value="mr">Monsieur</option>
+          <option value="mme">Madame</option>
+          <option value="mlle">Mademoiselle</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="status">Actif</label>
+        <input type="checkbox" id="status" name="status" checked>
+      </div>
+    </form>
+
+    <br><br>
+
+    <a href="home.html">Home</a>
+
+  </body>
+</html>
