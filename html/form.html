@@ -5,6 +5,8 @@
     <title>CRM</title>
     <link rel="icon" type="image/png" href="../img/icon.png" />
     <link rel="stylesheet" type="text/css" href="../css/form.css">
+    <script type="text/javascript" src="../js/form.js"></script>
+
   </head>
 
   <body>
@@ -30,9 +32,9 @@
       <div>
         <label for="civility">Civilité</label>
         <select id="civility" name="civility">
-          <option value="mr">Monsieur</option>
-          <option value="mme">Madame</option>
-          <option value="mlle">Mademoiselle</option>
+          <option value="Monsieur">Monsieur</option>
+          <option value="Madame">Madame</option>
+          <option value="Mademoiselle">Mademoiselle</option>
         </select>
       </div>
 
@@ -42,9 +44,11 @@
       </div>
     </form>
 
-    <button>Valider</button>
+    <button onclick="displayClient()">Valider</button>
 
     <br><br>
+
+    <p id="message"></p>
 
     <a href="home.html">Home</a>
 
