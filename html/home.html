@@ -4,12 +4,68 @@
     <meta charset="utf-8" />
     <title>CRM</title>
     <link rel="icon" type="image/png" href="../img/icon.png" />
+    <link rel="stylesheet" type="text/css" href="../css/home.css">
   </head>
 
   <body>
-    <h1 align="center">MyCRM</h1>
+    <h1>MyCRM</h1>
     <h2>Description:</h2>
     <p> Cette application permet de faire de la gestion de <strong>commande</strong> et de <strong>client</strong>.</p>
     <img src="../img/CRM.jpg" width=25%>
+
+    <h2>Clients:</h2>
+    <table border=1>
+      <caption>Liste des clients</caption>
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Prenom</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Dupont</td>
+          <td>Jean</td>
+        </tr>
+        <tr>
+          <td>Abdram</td>
+          <td>Sarah</td>
+        </tr>
+        <tr>
+          <td>Taeck</td>
+          <td>Rachel</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Commandes:</h2>
+    <table border=3>
+      <caption>Liste des commandes</caption>
+      <thead>
+        <tr>
+          <th>Numéro de commande</th>
+          <th>Etat</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>CMD01</td>
+          <td class="paiement">Payé</td>
+        </tr>
+        <tr>
+          <td>CMD02</td>
+          <td class="paiement">Payé</td>
+        </tr>
+        <tr>
+          <td>CMD03</td>
+          <td class="paiement-not">Non payé</td>
+        </tr>
+        <tr>
+          <td>CMD04</td>
+          <td>En attente de paiement</td>
+        </tr>
+      </tbody>
+    </table>
+
   </body>
 </html>
