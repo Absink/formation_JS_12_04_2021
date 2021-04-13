@@ -30,7 +30,6 @@ a:hover {
 }
 
 button {
-  float: right;
   background-color: orange;
   cursor: pointer;
 }

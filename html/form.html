@@ -55,6 +55,28 @@
 
     <p id="message"></p>
 
+
+    <h2>Informations sur les clients:</h2>
+
+    <form name="form_info" method="post">
+      <div>
+        <label for="info">Information souhaitée</label>
+        <select name="info" id="info">
+          <option value="search">Recherche</option>
+          <option value="avairage">Age moyen</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="text-search">Recherche du client:</label>
+        <input type="text" id="text-search">
+      </div>
+    </form>
+
+    <button onclick="choiceUser()">Valider</button>
+
+    <p id="message2"></p>
+
     <a href="home.html">Home</a>
 
   </body>
