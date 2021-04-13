@@ -1,0 +1,67 @@
+{
+  "clients": [
+    {
+      "id": 1,
+      "nom": "Jacquo",
+      "prenom": "Michel",
+      "age": 25,
+      "password": "michel001",
+      "civilite": "MR",
+      "statut": true
+    },
+    {
+      "id": 2,
+      "nom": "Vivilo",
+      "prenom": "Eloise",
+      "age": 44,
+      "password": "azerty111",
+      "civilite": "MME",
+      "statut": false
+    },
+    {
+      "{\"nom\":\"fdsfdsfsf\",\"prenom\":\"fdsfdsfsdf\",\"civilite\":\"Monsieur\",\"status\":true,\"age\":56}": "",
+      "id": 3
+    },
+    {
+      "nom": "dsqdsdd",
+      "prenom": "dsqdsqdqs",
+      "civilite": "Monsieur",
+      "status": true,
+      "age": 56,
+      "id": 4
+    },
+    {
+      "nom": "aaaaaa",
+      "prenom": "aaaaa",
+      "civilite": "Monsieur",
+      "status": true,
+      "age": 45,
+      "id": 5
+    },
+    {
+      "nom": "fdsfsd",
+      "prenom": "fdsfsf",
+      "password": "fdsfs",
+      "civilite": "Monsieur",
+      "status": true,
+      "age": "56",
+      "id": 6
+    }
+  ],
+  "commandes": [
+    {
+      "id": 1,
+      "numero": "CMD001",
+      "prix": 59.99,
+      "etat": 2,
+      "idClient": 1
+    },
+    {
+      "id": 2,
+      "numero": "CMD002",
+      "prix": 135.99,
+      "etat": 3,
+      "idClient": 1
+    }
+  ]
+}
