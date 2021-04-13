@@ -38,3 +38,20 @@ function serializeInfo(info) {
 
   })
 }
+
+function send() {
+  let tabHTML = document.getElementById('TestTab');
+  let row = tabHTML.insertRow(1)
+  let cell1 = row.insertCell(0);
+  let cell2 = row.insertCell(1);
+  cell1.innerHTML = "blablalz 1";
+  cell2.innerHTML = "blablalz 2";
+}
+
+
+// let tabHTML = document.getElementById('TestTab');
+// let row = tabHTML.insertRow(1)
+// let cell1 = row.insertCell(0);
+// let cell2 = row.insertCell(1);
+// cell1.innerHTML = "blablalz 1";
+// cell2.innerHTML = "blablalz 2";

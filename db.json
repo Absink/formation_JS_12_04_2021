@@ -17,35 +17,6 @@
       "password": "azerty111",
       "civilite": "MME",
       "statut": false
-    },
-    {
-      "{\"nom\":\"fdsfdsfsf\",\"prenom\":\"fdsfdsfsdf\",\"civilite\":\"Monsieur\",\"status\":true,\"age\":56}": "",
-      "id": 3
-    },
-    {
-      "nom": "dsqdsdd",
-      "prenom": "dsqdsqdqs",
-      "civilite": "Monsieur",
-      "status": true,
-      "age": 56,
-      "id": 4
-    },
-    {
-      "nom": "aaaaaa",
-      "prenom": "aaaaa",
-      "civilite": "Monsieur",
-      "status": true,
-      "age": 45,
-      "id": 5
-    },
-    {
-      "nom": "fdsfsd",
-      "prenom": "fdsfsf",
-      "password": "fdsfs",
-      "civilite": "Monsieur",
-      "status": true,
-      "age": "56",
-      "id": 6
     }
   ],
   "commandes": [
