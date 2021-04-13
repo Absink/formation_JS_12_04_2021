@@ -1,3 +1,12 @@
+/* Functions ID
+  1. addElementsInTabClients
+  2. addElementsInTabCommandes
+
+
+*/
+
+
+
 function displayClient() {
   let nom = document.getElementById('name').value;
   let prenom = document.getElementById('firstname').value;
@@ -15,7 +24,7 @@ function displayClient() {
       && password.length <= 6
       && age != ""
       ) { 
-    let newClient = new Client (nom, prenom, password, civ, status, age);
+    let newClient = new Client ("", nom, prenom, password, civ, status, age);
     $.ajax({
       url: `http://localhost:3000/clients`,
       type: 'POST',
@@ -117,9 +126,6 @@ function choiceUser() {
     })
     .done(function(data){
       document.getElementById('message2').innerHTML = "Les clients sont: ";
-      let clients = JSON.stringify(data);
-      console.log(data);
-      console.log(clients);
       for (d in data) {
         document.getElementById('message2').innerHTML += '<br>' + data[d].nom + ' ' + data[d].prenom;
       }
@@ -129,11 +135,9 @@ function choiceUser() {
 }
 
 
-
-
 class Client {
-  constructor(nom, prenom, pass, civilite, status, age) {
-    this.id;
+  constructor(id, nom, prenom, pass, civilite, status, age) {
+    this.id = id;
     this.nom = nom;
     this.prenom = prenom;
     this.password = pass;
@@ -154,7 +158,65 @@ function serializeClient(client) {
   })
 }
 
-let clients = [
-  new Client('TEST', 'Jean', 'ABCD', 'Monsieur', true, 25 ), 
-  new Client('TEST2', 'Edouard', 'ABCD', 'Madame', true, 35 )
-];
+
+
+
+function getAll() {
+  requestsJQuery('GET', 'http://localhost:3000/clients', 1);
+  requestsJQuery('GET', 'http://localhost:3000/commandes', 2);
+}
+
+function requestsJQuery(type, url, idFunction, data) {
+  $.ajax({
+    url: url,
+    type: type,
+    dataType: 'JSON',
+    contentType: "application/json",
+    data: data
+  })
+  .done(function(data) {
+    switch (idFunction) {
+      case 1:
+        addElementsInTabClients(data);
+        break
+      case 2:
+        addElementsInTabCommandes(data);
+        break;
+    }
+
+
+  })
+}
+
+
+// Function ID 1
+function addElementsInTabClients(data) {
+  let identifieRowClient = 1;
+  let tabClient = document.getElementById('tabClient');
+    for (i in data) {
+      let row = tabClient.insertRow(identifieRowClient);
+      let cell1 = row.insertCell(0);
+      cell1.innerHTML = data[i].id;
+      row.insertCell(1).innerHTML = data[i].nom;
+      row.insertCell(2).innerHTML = data[i].prenom;
+      row.insertCell(3).innerHTML = data[i].age;
+      row.insertCell(4).innerHTML = data[i].civilite;
+      row.insertCell(5).innerHTML = data[i].statut;
+      identifieRowClient++;
+    }
+}
+
+// Function ID 2
+function addElementsInTabCommandes(data) {
+  let identifieRow = 1;
+  let tabCommande = document.getElementById('tabCommande');
+  for (i in data) {
+    let row = tabCommande.insertRow(identifieRow);
+    row.insertCell(0).innerHTML = data[i].id;
+    row.insertCell(1).innerHTML = data[i].numero;
+    row.insertCell(2).innerHTML = data[i].prix;
+    row.insertCell(3).innerHTML = data[i].etat;
+    row.insertCell(4).innerHTML = data[i].idClient;
+    identifieRow++;
+  }
+}

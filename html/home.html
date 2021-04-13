@@ -5,65 +5,46 @@
     <title>CRM</title>
     <link rel="icon" type="image/png" href="../img/icon.png" />
     <link rel="stylesheet" type="text/css" href="../css/home.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/form.js"></script>
   </head>
 
-  <body>
+  <body onload="getAll()">
     <h1>MyCRM</h1>
     <h2>Description:</h2>
     <p> Cette application permet de faire de la gestion de <strong>commande</strong> et de <strong>client</strong>.</p>
     <img src="../img/CRM.jpg" width=25%>
 
     <h2>Clients:</h2>
-    <table border=1>
+    <table border=1 id="tabClient">
       <caption>Liste des clients</caption>
       <thead>
         <tr>
+          <th>ID</th>
           <th>Nom</th>
           <th>Prenom</th>
+          <th>Age</th>
+          <th>Civilité</th>
+          <th>Statut</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Dupont</td>
-          <td>Jean</td>
-        </tr>
-        <tr>
-          <td>Abdram</td>
-          <td>Sarah</td>
-        </tr>
-        <tr>
-          <td>Taeck</td>
-          <td>Rachel</td>
-        </tr>
       </tbody>
     </table>
 
     <h2>Commandes:</h2>
-    <table border=3>
+    <table border=3 id="tabCommande">
       <caption>Liste des commandes</caption>
       <thead>
         <tr>
+          <th>ID</th>
           <th>Numéro de commande</th>
+          <th>Prix</th>
           <th>Etat</th>
+          <th>ID Client</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>CMD01</td>
-          <td class="paiement">Payé</td>
-        </tr>
-        <tr>
-          <td>CMD02</td>
-          <td class="paiement">Payé</td>
-        </tr>
-        <tr>
-          <td>CMD03</td>
-          <td class="paiement-not">Non payé</td>
-        </tr>
-        <tr>
-          <td>CMD04</td>
-          <td>En attente de paiement</td>
-        </tr>
       </tbody>
     </table>
 
