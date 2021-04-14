@@ -10,7 +10,7 @@
     <script type="text/javascript" src="../js/models.js"></script>
   </head>
 
-  <body onload="getAll()">
+  <body onload="init()">
     <h1 id="title">MyCRM</h1>
     <button onclick="back()">Retour</button>
     <button onclick="deconnexion()">Deconnexion</button>
@@ -18,39 +18,42 @@
     <p> Cette application permet de faire de la gestion de <strong>commande</strong> et de <strong>client</strong>.</p>
     <img src="../img/CRM.jpg" width=25%>
 
-    <h2>Clients:</h2>
-    <table border=1 id="tabClient">
-      <caption>Liste des clients</caption>
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Nom</th>
-          <th>Prenom</th>
-          <th>Age</th>
-          <th>Civilité</th>
-          <th>Statut</th>
-        </tr>
-      </thead>
-      <tbody>
-      </tbody>
-    </table>
+    <span id="contentTable">
 
-    <h2>Commandes:</h2>
-    <table border=3 id="tabCommande">
-      <caption>Liste des commandes</caption>
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Numéro de commande</th>
-          <th>Prix</th>
-          <th>Prix TTC</th>
-          <th>Etat</th>
-          <th>ID Client</th>
-        </tr>
-      </thead>
-      <tbody>
-      </tbody>
-    </table>
+      <h2>Clients:</h2>
+      <table border=1 id="tabClient">
+        <caption>Liste des clients</caption>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Age</th>
+            <th>Civilité</th>
+            <th>Statut</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+
+      <h2>Commandes:</h2>
+      <table border=3 id="tabCommande">
+        <caption>Liste des commandes</caption>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Numéro de commande</th>
+            <th>Prix</th>
+            <th>Prix TTC</th>
+            <th>Etat</th>
+            <th>ID Client</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </span>
 
   </body>
 </html>

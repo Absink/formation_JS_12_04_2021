@@ -91,10 +91,11 @@ class Commande {
 
 
 class User {
-  constructor(id, username, password) {
+  constructor(id, username, password, role) {
     this.id = id;
     this.username = username;
     this.password = password;
+    this.role = role;
   }
 
   serialize() {
@@ -102,6 +103,7 @@ class User {
       id: this.id,
       username: this.username,
       password: this.password,
+      role: this.role,
     })
   }
 
@@ -110,6 +112,7 @@ class User {
     return new User(x['id'],
                       x['username'],
                       x['password'],
+                      x['role']
     )
   }
 }

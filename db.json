@@ -38,8 +38,15 @@
   "users": [
     {
       "id": 1,
-      "username": "Jojo",
-      "password": "azerty"
+      "username": "Jojo1",
+      "password": "azerty",
+      "role": "ADMIN"
+    },
+    {
+      "id": 2,
+      "username": "Jojo2",
+      "password": "azerty",
+      "role": "USER"
     }
   ]
 }

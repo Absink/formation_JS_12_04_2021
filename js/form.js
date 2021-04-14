@@ -137,15 +137,28 @@ function choiceUser() {
 }
 
 
-function getAll() {
+function init() {
   requestsJQuery('GET', 'http://localhost:3000/clients', 1);
   requestsJQuery('GET', 'http://localhost:3000/commandes', 2);
   if (localStorage.getItem('username')) {
     document.getElementById('title').innerHTML = 'MyCRM (connecté en tant que ' + localStorage.getItem('username') + ')';
+    document.getElementById('contentTable').hidden = false;
   } else {
     document.getElementById('title').innerHTML = 'MyCRM';
+    document.getElementById('contentTable').hidden = true;
   }
   
+}
+
+function initForm() {
+  if (!localStorage.getItem('username')) {
+    document.getElementById('content').innerHTML = "Désolé, vous n'avez pas les droits";
+  } else if (localStorage.getItem('role') == 'USER') {
+    document.getElementById('contentAddClient').hidden = true;
+  } else {
+    document.getElementById('contentAddClient').hidden = false;
+  }
+
 }
 
 
@@ -216,6 +229,7 @@ function saveToSession(data) {
     let user = new User().deserialize(data[0]);
     console.log(user.username);
     localStorage.setItem('username', user.username);
+    localStorage.setItem('role', user.role);
     console.log(localStorage.getItem('username'));
     window.location.href = 'home.html';
   } catch (err) {

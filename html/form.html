@@ -11,76 +11,82 @@
 
   </head>
 
-  <body>
+  <body onload="initForm()">
     <h1 align="center">MyCRM</h1>
-    <h2>Ajouter un client:</h2>
 
-    <form name="form_client" method="post">
-      <div>
-        <label for="name">Nom</label>
-        <input type="text" id="name" name="name">
-      </div>
+    <span id='content'>
+      <span id='contentAddClient'>
+        <h2>Ajouter un client:</h2>
 
-      <div>
-        <label for="firstname">Prenom</label>
-        <input type="text" id="firstname" name="firstname">
-      </div>
+        <form name="form_client" method="post">
+          <div>
+            <label for="name">Nom</label>
+            <input type="text" id="name" name="name">
+          </div>
 
-      <div>
-        <label for="age">Age</label>
-        <input type="number" id="age" name="age">
-      </div>
+          <div>
+            <label for="firstname">Prenom</label>
+            <input type="text" id="firstname" name="firstname">
+          </div>
 
-      <div>
-        <label for="password">Mot de passe</label>
-        <input type="password" id="password" name="password">
-      </div>
+          <div>
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age">
+          </div>
 
-      <div>
-        <label for="civility">Civilité</label>
-        <select id="civility" name="civility">
-          <option value="Monsieur">Monsieur</option>
-          <option value="Madame">Madame</option>
-          <option value="Mademoiselle">Mademoiselle</option>
-        </select>
-      </div>
+          <div>
+            <label for="password">Mot de passe</label>
+            <input type="password" id="password" name="password">
+          </div>
 
-      <div>
-        <input type="checkbox" id="status" checked>
-        <label id="status-not-bold" for="status">Actif</label>
-      </div>
-    </form>
+          <div>
+            <label for="civility">Civilité</label>
+            <select id="civility" name="civility">
+              <option value="Monsieur">Monsieur</option>
+              <option value="Madame">Madame</option>
+              <option value="Mademoiselle">Mademoiselle</option>
+            </select>
+          </div>
 
-    <button onclick="displayClient()">Valider</button>
+          <div>
+            <input type="checkbox" id="status" checked>
+            <label id="status-not-bold" for="status">Actif</label>
+          </div>
+        </form>
 
-    <br><br>
+        <button onclick="displayClient()">Valider</button>
 
-    <p id="message"></p>
+        <br><br>
+
+        <p id="message"></p>
+      </span>
 
 
-    <h2>Informations sur les clients:</h2>
+      <h2>Informations sur les clients:</h2>
 
-    <form name="form_info" method="post">
-      <div>
-        <label for="info">Information souhaitée</label>
-        <select name="info" id="info">
-          <option value="search">Recherche</option>
-          <option value="avairage">Age moyen</option>
-          <option value="list">Lister clients</option>
-        </select>
-      </div>
+      <form name="form_info" method="post">
+        <div>
+          <label for="info">Information souhaitée</label>
+          <select name="info" id="info">
+            <option value="search">Recherche</option>
+            <option value="avairage">Age moyen</option>
+            <option value="list">Lister clients</option>
+          </select>
+        </div>
 
-      <div>
-        <label for="text-search">Recherche du client:</label>
-        <input type="text" id="text-search">
-      </div>
-    </form>
+        <div>
+          <label for="text-search">Recherche du client:</label>
+          <input type="text" id="text-search">
+        </div>
+      </form>
 
-    <button onclick="choiceUser()">Valider</button>
+      <button onclick="choiceUser()">Valider</button>
 
-    <p id="message2"></p>
+      <p id="message2"></p>
 
-    <a href="home.html">Home</a>
+      <a href="home.html">Home</a>
+
+    </span>
 
   </body>
 </html>
