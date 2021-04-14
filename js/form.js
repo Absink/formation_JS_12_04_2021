@@ -88,6 +88,8 @@ function choiceUser() {
     })
     .done(function(data){
       console.log(data[0])
+      let a = new Client().deserialize(data[0]);
+      console.log(a)
       if (data[0]) {
         document.getElementById('message2').innerHTML = data[0].civilite + ' ' + data[0].nom.toUpperCase() + ' ' +
           data[0].prenom + "(" + data[0].age + " ans)";
@@ -135,36 +137,11 @@ function choiceUser() {
 }
 
 
-class Client {
-  constructor(id, nom, prenom, pass, civilite, status, age) {
-    this.id = id;
-    this.nom = nom;
-    this.prenom = prenom;
-    this.password = pass;
-    this.civilite = civilite;
-    this.status = status;
-    this.age = age;
-  }
-}
-
-function serializeClient(client) {
-  return JSON.stringify({
-    nom: client.nom,
-    prenom: client.prenom,
-    password: client.pass,
-    civilite: client.civilite,
-    status: client.status,
-    age: parseInt(client.age)
-  })
-}
-
-
-
-
 function getAll() {
   requestsJQuery('GET', 'http://localhost:3000/clients', 1);
   requestsJQuery('GET', 'http://localhost:3000/commandes', 2);
 }
+
 
 function requestsJQuery(type, url, idFunction, data) {
   $.ajax({
@@ -194,14 +171,15 @@ function addElementsInTabClients(data) {
   let identifieRowClient = 1;
   let tabClient = document.getElementById('tabClient');
     for (i in data) {
+      let client = new Client().deserialize(data[i])
       let row = tabClient.insertRow(identifieRowClient);
       let cell1 = row.insertCell(0);
       cell1.innerHTML = data[i].id;
-      row.insertCell(1).innerHTML = data[i].nom;
-      row.insertCell(2).innerHTML = data[i].prenom;
-      row.insertCell(3).innerHTML = data[i].age;
-      row.insertCell(4).innerHTML = data[i].civilite;
-      row.insertCell(5).innerHTML = data[i].statut;
+      row.insertCell(1).innerHTML = client.nom;
+      row.insertCell(2).innerHTML = client.prenom;
+      row.insertCell(3).innerHTML = client.age;
+      row.insertCell(4).innerHTML = client.civilite;
+      row.insertCell(5).innerHTML = client.statusToString();
       identifieRowClient++;
     }
 }
@@ -211,12 +189,15 @@ function addElementsInTabCommandes(data) {
   let identifieRow = 1;
   let tabCommande = document.getElementById('tabCommande');
   for (i in data) {
+    let cmd = new Commande().deserialize(data[i])
+    console.log(cmd)
     let row = tabCommande.insertRow(identifieRow);
-    row.insertCell(0).innerHTML = data[i].id;
-    row.insertCell(1).innerHTML = data[i].numero;
-    row.insertCell(2).innerHTML = data[i].prix;
-    row.insertCell(3).innerHTML = data[i].etat;
-    row.insertCell(4).innerHTML = data[i].idClient;
+    row.insertCell(0).innerHTML = cmd.id;
+    row.insertCell(1).innerHTML = cmd.numero;
+    row.insertCell(2).innerHTML = cmd.varWithEuro(cmd.prix);
+    row.insertCell(3).innerHTML = cmd.varWithEuro(cmd.getPrixTTC());
+    row.insertCell(4).innerHTML = cmd.etat;
+    row.insertCell(5).innerHTML = cmd.Client.display();
     identifieRow++;
   }
 }

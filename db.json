@@ -7,7 +7,7 @@
       "age": 25,
       "password": "michel001",
       "civilite": "MR",
-      "statut": true
+      "status": true
     },
     {
       "id": 2,
@@ -16,7 +16,7 @@
       "age": 44,
       "password": "azerty111",
       "civilite": "MME",
-      "statut": false
+      "status": false
     }
   ],
   "commandes": [
@@ -33,6 +33,13 @@
       "prix": 135.99,
       "etat": 3,
       "idClient": 1
+    }
+  ],
+  "infos": [
+    {
+      "id": 1,
+      "info1": "Bonour",
+      "info2": 5.55
     }
   ]
 }

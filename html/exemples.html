@@ -7,11 +7,12 @@
     <link rel="stylesheet" type="text/css" href="../css/form.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="../js/exemples.js"></script>
+    <script type="text/javascript" src="../js/models.js"></script>
   </head>
  
   <body onload="send()">
     <h1>TITRE</h1>
-    <h2>SOU TITRE</h2>
+    <h2 hidden>SOU TITRE</h2>
     <p id='paragraphe'>C'est un exemple</p>
     <p>C'est un exemple 2</p>
 
@@ -28,7 +29,7 @@
 
     <button onclick="send()">TEST</button>
 
-    <button id="getTest">Recup data</button>
+    <button id="getTest" onclick="test()">Recup data</button>
   </body>
 
 </html>

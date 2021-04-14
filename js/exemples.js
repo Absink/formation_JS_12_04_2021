@@ -20,38 +20,47 @@ $(document).ready(function(){
       // console.log(data['message']['bulldog'][1]);
     });
   })
-
-
 });
 
+sessionStorage.setItem('test', 25);
+console.log(sessionStorage.getItem('test'));
+sessionStorage.clear();
+console.log(sessionStorage.getItem('test'));
 
-class Info {
-  constructor(param1, paramX) {
-    this.info1 = param1;
-    this.info2 = paramX;
+function test() {
+  let x = 4;
+  let y = 'toto';
+  try {
+    dd()
+  } catch(error) {
+    alert('Une erreur est survenue ' + error);
   }
 }
 
-function serializeInfo(info) {
-  return JSON.stringify({
-    info1: parseFloat(info.info1),
-
-  })
-}
-
-function send() {
-  let tabHTML = document.getElementById('TestTab');
-  let row = tabHTML.insertRow(1)
-  let cell1 = row.insertCell(0);
-  let cell2 = row.insertCell(1);
-  cell1.innerHTML = "blablalz 1";
-  cell2.innerHTML = "blablalz 2";
-}
 
 
-// let tabHTML = document.getElementById('TestTab');
-// let row = tabHTML.insertRow(1)
-// let cell1 = row.insertCell(0);
-// let cell2 = row.insertCell(1);
-// cell1.innerHTML = "blablalz 1";
-// cell2.innerHTML = "blablalz 2";
+
+
+
+// function serializeInfo(info) {
+//   return JSON.stringify({
+//     info1: parseFloat(info.info1),
+
+//   })
+// }
+
+// function send() {
+//   let info1 = new Info("bonjour", 45);
+//   // console.log(info1);
+//   // console.log(info1.test());
+//   // console.log(info1.serialize());
+//   let infoX = new Info();
+//   console.log(infoX.desesialize(info1.serialize()))
+
+//   // let tabHTML = document.getElementById('TestTab');
+//   // let row = tabHTML.insertRow(1)
+//   // let cell1 = row.insertCell(0);
+//   // let cell2 = row.insertCell(1);
+//   // cell1.innerHTML = "blablalz 1";
+//   // cell2.innerHTML = "blablalz 2";
+
