@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>CRM</title>
+    <link rel="icon" type="image/png" href="../img/icon.png" />
+    <link rel="stylesheet" type="text/css" href="../css/form.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/form.js"></script>
+    <script type="text/javascript" src="../js/models.js"></script>
+  </head>
+
+  <body>
+    <h1>MyCRM</h1>
+    <h2>Connexion</h2>
+
+    <form name="form_login" method="post">
+      <div>
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username">
+      </div>
+
+      <div>
+        <label for="password">Mot de passe</label>
+        <input type="password" id="password" name="password">
+      </div>
+
+    </form>
+
+    <button onclick="login()">Connexion</button>
+
+    <p id="error"></p>
+
+
+  </body>
+</html>

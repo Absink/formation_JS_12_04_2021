@@ -87,3 +87,29 @@ class Commande {
     return toSend + ' €';
   }
 }
+
+
+
+class User {
+  constructor(id, username, password) {
+    this.id = id;
+    this.username = username;
+    this.password = password;
+  }
+
+  serialize() {
+    return JSON.stringify({
+      id: this.id,
+      username: this.username,
+      password: this.password,
+    })
+  }
+
+  deserialize(obj) {
+    let x = JSON.parse(JSON.stringify(obj));
+    return new User(x['id'],
+                      x['username'],
+                      x['password'],
+    )
+  }
+}

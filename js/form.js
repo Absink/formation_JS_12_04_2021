@@ -1,7 +1,7 @@
 /* Functions ID
   1. addElementsInTabClients
   2. addElementsInTabCommandes
-
+  3. connexion
 
 */
 
@@ -140,6 +140,12 @@ function choiceUser() {
 function getAll() {
   requestsJQuery('GET', 'http://localhost:3000/clients', 1);
   requestsJQuery('GET', 'http://localhost:3000/commandes', 2);
+  if (localStorage.getItem('username')) {
+    document.getElementById('title').innerHTML = 'MyCRM (connecté en tant que ' + localStorage.getItem('username') + ')';
+  } else {
+    document.getElementById('title').innerHTML = 'MyCRM';
+  }
+  
 }
 
 
@@ -159,6 +165,8 @@ function requestsJQuery(type, url, idFunction, data) {
       case 2:
         addElementsInTabCommandes(data);
         break;
+      case 3:
+        saveToSession(data);
     }
 
 
@@ -201,3 +209,34 @@ function addElementsInTabCommandes(data) {
     identifieRow++;
   }
 }
+
+// Function ID 3
+function saveToSession(data) {
+  try {
+    let user = new User().deserialize(data[0]);
+    console.log(user.username);
+    localStorage.setItem('username', user.username);
+    console.log(localStorage.getItem('username'));
+    window.location.href = 'home.html';
+  } catch (err) {
+    document.getElementById('error').innerHTML = err;
+  }
+
+}
+
+
+function login() {
+  let username = document.getElementById('username').value;
+  let password = document.getElementById('password').value;
+  requestsJQuery('GET', `http://localhost:3000/users?username=${username}&password=${password}`, 3);
+}
+
+function deconnexion() {
+  localStorage.clear();
+  document.getElementById('title').innerHTML = 'MyCRM';
+}
+
+function back() {
+  window.history.back();
+}
+

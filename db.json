@@ -35,11 +35,11 @@
       "idClient": 1
     }
   ],
-  "infos": [
+  "users": [
     {
       "id": 1,
-      "info1": "Bonour",
-      "info2": 5.55
+      "username": "Jojo",
+      "password": "azerty"
     }
   ]
 }
